@@ -25,6 +25,81 @@ public class AccountOpenDao implements Serializable {
     private String state;
     private String distric;
     private String image;
+<<<<<<< HEAD
+=======
+//    =====================================================
+    private int accNum;
+    private int cusId;
+    private String accType;
+    private double balance;
+    private int BranchId;
+    private String accStatus;
+    private String branch;
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public Timestamp getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(Timestamp dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public int getAccNum() {
+        return accNum;
+    }
+
+    public void setAccNum(int accNum) {
+        this.accNum = accNum;
+    }
+
+    public int getCusId() {
+        return cusId;
+    }
+
+    public void setCusId(int cusId) {
+        this.cusId = cusId;
+    }
+
+    public String getAccType() {
+        return accType;
+    }
+
+    public void setAccType(String accType) {
+        this.accType = accType;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getBranchId() {
+        return BranchId;
+    }
+
+    public void setBranchId(int BranchId) {
+        this.BranchId = BranchId;
+    }
+
+    public String getAccStatus() {
+        return accStatus;
+    }
+
+    public void setAccStatus(String accStatus) {
+        this.accStatus = accStatus;
+    }
+>>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
 
     public String getImage() {
         return image;
