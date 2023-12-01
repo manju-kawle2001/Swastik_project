@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
 import java.io.IOException;
+import java.io.*;
 
 public class AddBeneficiary extends HttpServlet {
 
@@ -44,7 +45,7 @@ public class AddBeneficiary extends HttpServlet {
         try {
             BeneficiaryDao bDao = new BeneficiaryDao();
             BeneficiaryDto bDto = new BeneficiaryDto();
-            
+
             bDao.setName(request.getParameter("bName"));
             System.out.println(request.getParameter("bName"));
 
