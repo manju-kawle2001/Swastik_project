@@ -12,9 +12,13 @@ public class ManagerInformationDao implements Serializable {
     private String dob;
     private Timestamp doh;
 <<<<<<< HEAD
+<<<<<<< HEAD
     private String salary;
 =======
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
+=======
+    private String salary;
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
     private String mobile;
 
     public Timestamp getDoh() {
@@ -69,6 +73,7 @@ public class ManagerInformationDao implements Serializable {
         this.mobile = mobile;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
      public String getSalary() {
         return salary;
@@ -82,6 +87,15 @@ public class ManagerInformationDao implements Serializable {
 =======
 
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
+=======
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
     public String getPassword() {
         return password;
     }

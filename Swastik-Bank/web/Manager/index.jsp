@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<%@ page import=" com.swastik.model.*" %>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
 <!DOCTYPE html>
 <html>
     <head>
@@ -77,7 +81,15 @@
         </form> -->
       </div>
       <!-- End Search Bar -->
+<<<<<<< HEAD
 
+=======
+<%
+    int n = EmployeeInformationDto.getCount();
+%>
+
+      <%= n  +"ggggggggggg" %>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
           <li class="nav-item d-block d-lg-none">
@@ -206,7 +218,11 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
+<<<<<<< HEAD
               <a href="Customer-List.html">
+=======
+              <a href="Customer-List.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Customer List</span>
               </a>
             </li>
@@ -236,12 +252,20 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
+<<<<<<< HEAD
               <a href="Employee-List.html">
+=======
+              <a href="Employee-List.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Employee List</span>
               </a>
             </li>
             <li>
+<<<<<<< HEAD
               <a href="#">
+=======
+              <a href="Registration.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Add Employee</span>
               </a>
             </li>
@@ -265,12 +289,20 @@
             data-bs-parent="#sidebar-nav"
           >
             <li>
+<<<<<<< HEAD
               <a href="forms-elements.html">
+=======
+              <a href="forms-elements.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Loan Request</span>
               </a>
             </li>
             <li>
+<<<<<<< HEAD
               <a href="forms-elements.html">
+=======
+              <a href="forms-elements.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Probleam Report</span>
               </a>
             </li>
@@ -282,7 +314,11 @@
         <!-- End Profile Page Nav -->
 
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link collapsed" href="Review-And-Rating.html">
+=======
+          <a class="nav-link collapsed" href="Review-And-Rating.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
             <i class="bi bi-question-circle"></i>
             <span>Review</span>
           </a>
@@ -333,7 +369,11 @@
                     <i class="fa-solid fa-users"></i>
                   </div>
                   <div class="ps-3">
+<<<<<<< HEAD
                     <h6>145</h6>
+=======
+                    <h6> <%= n%></h6>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                     <!-- <span class="text-success small pt-1 fw-bold">12%</span>
                     <span class="text-muted small pt-2 ps-1">increase</span> -->
                   </div>
@@ -390,6 +430,10 @@
                 ></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
+<<<<<<< HEAD
+=======
+                      <a href="index.jsp"></a>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                     <h6>Filter</h6>
                   </li>
 

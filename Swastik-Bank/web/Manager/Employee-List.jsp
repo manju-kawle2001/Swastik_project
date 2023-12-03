@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<%@page import="java.util.*" %>
+<%@ page import=" com.swastik.model.*" %>
+<%@ page import="com.swastik.controlar.*" %>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +41,13 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+<<<<<<< HEAD
+=======
+        <% 
+        List<EmployeeInformationDao> d =EmployeeInformationDto.alldata();
+        
+        %>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
        <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
@@ -224,7 +237,11 @@
               </a>
             </li>
             <li>
+<<<<<<< HEAD
               <a href="#">
+=======
+              <a href="Registration.jsp">
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <i class="bi bi-circle"></i><span>Add Employee</span>
               </a>
             </li>
@@ -289,19 +306,39 @@
 
       <section class="section">
         <div class="row">
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Employee</h5>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                 <!-- Table with stripped rows -->
                 <table class="table align-middle mb-0 bg-white">
                   <thead class="bg-light">
                     <tr>
                       <th>Name</th>
+<<<<<<< HEAD
                       <th>Employee Position</th>
                       <th colspan="2"><center>Actions</center></th>
                     </tr>
+=======
+                      <th>Salary</th>
+                      <th>Employee Position</th>
+                      <th colspan="2"><center>Actions</center></th>
+                    </tr>
+                    <%
+                if(!d.isEmpty()){
+                   for(EmployeeInformationDao p : d){                                
+                
+            %>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                   </thead>
                   <tbody>
                     <tr>
@@ -314,8 +351,14 @@
                             class="rounded-circle"
                           />
                           <div class="ms-3">
+<<<<<<< HEAD
                             <p class="fw-bold mb-1">name</p>
                             <p class="text-muted mb-0">name@gmail.com</p>
+=======
+                              
+                              <p class="fw-bold mb-1"><%=p.getName() %></p>
+                            <p class="text-muted mb-0"><%=p.getEmail() %></p>
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                           </div>
                         </div>
                       </td>
@@ -331,6 +374,7 @@
                         <a href="#" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
+<<<<<<< HEAD
                     <tr>
                       <td>
                         <div class="d-flex align-items-center">
@@ -385,6 +429,14 @@
                         <a href="#" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
+=======
+                    <% }
+                        }else{
+                        out.print("kdkkdd");
+                            }
+                        %>   
+                   
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
                   </tbody>
                 </table>
 
@@ -393,6 +445,10 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+                     
+>>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
       </section>
     </main>
     <!-- End #main -->
