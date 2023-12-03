@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -88,4 +89,18 @@ public class ManagerInformationDto {
 
 =======
 >>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
+=======
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.swastik.model;
+
+/**
+ *
+ * @author Sohan_Maali
+ */
+public class ManagerInformationDto {
+    
+>>>>>>> cf5cb20333c273c5ca71f02ec7647db76e06eb39
 }

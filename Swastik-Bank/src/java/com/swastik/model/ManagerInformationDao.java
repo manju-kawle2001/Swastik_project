@@ -13,12 +13,15 @@ public class ManagerInformationDao implements Serializable {
     private Timestamp doh;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private String salary;
 =======
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
 =======
     private String salary;
 >>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
+=======
+>>>>>>> cf5cb20333c273c5ca71f02ec7647db76e06eb39
     private String mobile;
 
     public Timestamp getDoh() {
@@ -74,6 +77,7 @@ public class ManagerInformationDao implements Serializable {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
      public String getSalary() {
         return salary;
@@ -96,12 +100,19 @@ public class ManagerInformationDao implements Serializable {
         this.salary = salary;
     }
 >>>>>>> 68183cabc11db5d135775b38c23ce894ef69e6b6
+=======
+
+>>>>>>> cf5cb20333c273c5ca71f02ec7647db76e06eb39
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setSalary(String salary) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

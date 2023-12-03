@@ -1,5 +1,6 @@
 package com.swastik.controlar;
 
+import com.swastik.model.AccountOpenDao;
 import com.swastik.other.Message;
 import com.swastik.model.BeneficiaryDao;
 import com.swastik.model.BeneficiaryDto;
@@ -12,7 +13,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
 import java.io.IOException;
-import java.io.*;
 
 public class AddBeneficiary extends HttpServlet {
 
@@ -43,21 +43,19 @@ public class AddBeneficiary extends HttpServlet {
         }
 =======
         try {
+            HttpSession session = request.getSession();
             BeneficiaryDao bDao = new BeneficiaryDao();
             BeneficiaryDto bDto = new BeneficiaryDto();
+            AccountOpenDao clda = (AccountOpenDao) session.getAttribute("activeUser");
 
-            bDao.setName(request.getParameter("bName"));
-            System.out.println(request.getParameter("bName"));
+            bDao.setCustAccNum(clda.getAccNum()); // Customer Account Number
 
-            bDao.setIfsc(request.getParameter("ifscCode"));
-            System.out.println(request.getParameter("ifscCode"));
+            bDao.setIfsc(request.getParameter("ifscCode"));  // Beneficiary IFSC
 
-            bDao.setAccNum(request.getParameter("accNum"));
+            bDao.setAccNum(request.getParameter("accNum")); // Beneficiary Account Number
             bDao.setBank(request.getParameter("bank"));
-            System.out.println(request.getParameter("bank"));
+
             bDao.setLimit(request.getParameter("limit"));
-            System.out.println(request.getParameter("limit"));
-            HttpSession session = request.getSession();
 
             if (bDto.addBeneficiary(bDao)) {
                 Message message = new Message("Beneficiary Added Successful !!", "success", "alert-success");

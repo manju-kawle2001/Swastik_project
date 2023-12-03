@@ -39,7 +39,7 @@ public class AccountOpenDto {
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
         if (con != null) {
             try {
-                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, pincode, state, distric) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String query = "insert into customer(password, name, father, mother, gender, dob, phone, email, adhar, pan, maritail, occupation, address, city, distric, pincode, state) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getPassword());
                 psmt.setString(2, cdao.getName());
@@ -55,8 +55,8 @@ public class AccountOpenDto {
                 psmt.setString(12, cdao.getOccupation());
                 psmt.setString(13, cdao.getAddress());
                 psmt.setString(14, cdao.getCity());
-                psmt.setString(15, cdao.getPincode());
-                psmt.setString(16, cdao.getState());
+                psmt.setString(15, cdao.getDistric());
+                psmt.setString(16, cdao.getPincode());
                 psmt.setString(17, cdao.getState());
 <<<<<<< HEAD
                 
@@ -147,7 +147,8 @@ public class AccountOpenDto {
         boolean flag = false;
         if (con != null) {
             try {
-                String query = "select * from customer where email = ? and password = ?";
+//                String query = "select * from customer JOIN customer ON customer.customerid = account.customer_id where email = ? and password = ?";
+                String query = "SELECT * FROM customer AS c JOIN account AS a ON c.customerid = a.customer_id WHERE c.email = ? AND c.password = ?";
                 PreparedStatement psmt = con.prepareStatement(query);
                 psmt.setString(1, cdao.getEmail());
                 psmt.setString(2, cdao.getPassword());
@@ -171,6 +172,7 @@ public class AccountOpenDto {
                     cdao.setPincode(set.getString("pincode"));
                     cdao.setState(set.getString("state"));
 //                    ============================================================
+<<<<<<< HEAD
 
                     flag = true;
                 }
@@ -195,24 +197,25 @@ public class AccountOpenDto {
                 ResultSet set = psmt.executeQuery();
                 while (set.next()) {
 
+=======
+>>>>>>> cf5cb20333c273c5ca71f02ec7647db76e06eb39
                     cdao.setAccNum(set.getInt("Account_Num"));
                     cdao.setAccType(set.getString("Account_Type"));
                     cdao.setBalance(Double.parseDouble(set.getString("Current_Balance")));
-                    cdao.setBranch("");
+                    cdao.setBranchId(set.getInt("Branch_id"));
                     cdao.setAccStatus(set.getString("Account_Status"));
-//                    ============================================================
 
                     flag = true;
                 }
             } catch (SQLException e) {
-                System.out.println(e );
+                System.out.println(e);
             }
         }
         return flag;
     }
 
     public boolean deleteCustomer(AccountOpenDao cdao) {
-//         delete from customer where customerid = ?;
+
         Connection con = GetConnection.getConnectin();
         boolean flag = false;
         if (con != null) {
@@ -230,5 +233,55 @@ public class AccountOpenDto {
         }
         return flag;
     }
+<<<<<<< HEAD
 >>>>>>> 6f9248faf005b41d0c64d6577294c80ce91eee35
+=======
+
+    public boolean changePassword(AccountOpenDao cdao) {
+        //Not Working
+        boolean flag = false;
+        Connection con = GetConnection.getConnectin();
+
+        if (con != null) {
+            try {
+                String query = "UPDATE customer SET password = ? WHERE password = ? AND email = ?";
+                PreparedStatement psmt = con.prepareStatement(query);
+                psmt.setString(1, cdao.getPassword());
+                psmt.setString(2, cdao.getPassword());
+                psmt.setString(3, cdao.getEmail());
+                flag = true;
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return flag;
+    }
+
+//    public boolean customerLoginProcess(AccountOpenDao cdao) {
+//        Connection con = GetConnection.getConnectin();
+//        boolean flag = false;
+//        if (con != null) {
+//            try {
+//                String query = "select * from account where customer_id = ?";
+//                PreparedStatement psmt = con.prepareStatement(query);
+//                psmt.setInt(1, cdao.getCustomerId());
+//                ResultSet set = psmt.executeQuery();
+//                while (set.next()) {
+//
+//                    cdao.setAccNum(set.getInt("Account_Num"));
+//                    cdao.setAccType(set.getString("Account_Type"));
+//                    cdao.setBalance(Double.parseDouble(set.getString("Current_Balance")));
+//                    cdao.setBranch("");
+//                    cdao.setAccStatus(set.getString("Account_Status"));
+////                    ============================================================
+//
+//                    flag = true;
+//                }
+//            } catch (SQLException e) {
+//                System.out.println(e);
+//            }
+//        }
+//        return flag;
+//    }
+>>>>>>> cf5cb20333c273c5ca71f02ec7647db76e06eb39
 }

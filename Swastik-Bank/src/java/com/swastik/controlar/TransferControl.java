@@ -1,12 +1,12 @@
 package com.swastik.controlar;
 
-import com.swastik.other.Message;
 import com.swastik.model.BeneficiaryDao;
 import com.swastik.model.BeneficiaryDto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class TransferControl extends HttpServlet {
@@ -14,24 +14,26 @@ public class TransferControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        BeneficiaryDao bDao = new BeneficiaryDao();
-        BeneficiaryDto bDto = new BeneficiaryDto();
 
-        System.out.println(request.getParameter("sohan") + "-----------");
-        System.out.println(request.getParameter("beneficiaryBank") + "-----------");
-        System.out.println(request.getParameter("beneficiaryAccNum") + "-----------");
+        BeneficiaryDao beneficiaryDao = new BeneficiaryDao();
 
-//        bDao.setName(request.getParameter("beneficiaryName"));
-//        bDao.setName(request.getParameter("beneficiaryBank"));
-//        bDao.setAccNum(request.getParameter("beneficiaryAccNum"));
-//        bDao.setIfsc(request.getParameter("beneficiaryifsc"));
-        // bDao.set(request.getParameter("limit"));
+        HttpSession session = request.getSession();
+
+        beneficiaryDao.setBeneId(Integer.parseInt(request.getParameter("beneficiaryId")));
+
+        beneficiaryDao.setName(request.getParameter("beneficiaryName"));
+
+        beneficiaryDao.setBank(request.getParameter("beneficiaryBank"));
+
+        beneficiaryDao.setAccNum(request.getParameter("beneficiaryAccNum"));
+
+        beneficiaryDao.setIfsc(request.getParameter("beneficiaryifsc"));
+
 //        ============================================================================
-        if (bDto.deleteBeneficiary(bDao)) {
-            Message message = new Message("Beneficiary Deleted Successful !!", "success", "alert-success");
-            response.sendRedirect("Customer/transfermoney.jsp");
-        } else {
-            Message message = new Message("Beneficiary Deleting Fail !!", "fail", "alert-success");
+        if (request.getParameter("operation").equals("Send")) {
+            session.setAttribute("beneficiaryDao", beneficiaryDao);
+            response.sendRedirect("Customer/transfermoney2.jsp");
+        } else if (request.getParameter("operation").equals("Edit")) {
             response.sendRedirect("Customer/transfermoney.jsp");
         }
     }
